@@ -43,7 +43,7 @@ public abstract class AsyncMultiInterestUserProcessor<T> extends
      * @see com.alipay.remoting.rpc.protocol.UserProcessor#handleRequest(com.alipay.remoting.BizContext, com.alipay.remoting.AsyncContext, java.lang.Object)
      */
     @Override
-    public abstract void handleRequest(BizContext bizCtx, AsyncContext asyncCtx, T request);
+    public abstract void handleRequest(BizContext bizCtx, AsyncContext asyncCtx, T request) throws Exception;
 
     /**
      * @see com.alipay.remoting.rpc.protocol.MultiInterestUserProcessor#multiInterest()

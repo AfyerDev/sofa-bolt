@@ -38,7 +38,7 @@ public interface UserProcessor<T> extends LifeCycle {
      * @param request request
      * @return BizContext
      */
-    BizContext preHandleRequest(RemotingContext remotingCtx, T request);
+    BizContext preHandleRequest(RemotingContext remotingCtx, T request) throws Exception;
 
     /**
      * Handle request with {@link AsyncContext}.
@@ -46,7 +46,7 @@ public interface UserProcessor<T> extends LifeCycle {
      * @param asyncCtx async context
      * @param request request
      */
-    void handleRequest(BizContext bizCtx, AsyncContext asyncCtx, T request);
+    void handleRequest(BizContext bizCtx, AsyncContext asyncCtx, T request) throws Exception;
 
     /**
      * Handle request in sync way.
