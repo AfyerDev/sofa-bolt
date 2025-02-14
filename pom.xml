@@ -101,11 +101,6 @@
             <artifactId>netty-all</artifactId>
             <version>${netty.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.alipay.sofa.common</groupId>
-            <artifactId>sofa-common-tools</artifactId>
-            <version>${sofa.common.tools}</version>
-        </dependency>
 
         <!-- provided scope -->
         <dependency>
