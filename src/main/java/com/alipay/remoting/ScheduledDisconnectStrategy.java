@@ -109,8 +109,8 @@ public class ScheduledDisconnectStrategy implements ConnectionMonitorStrategy {
                         Configs.CONN_SERVICE_STATUS_OFF);
                     serviceOffConnections.add(freshSelectConnect);
                 } else {
-                    if (logger.isInfoEnabled()) {
-                        logger.info("serviceOnConnections({}) size[{}], CONNECTION_THRESHOLD[{}].",
+                    if (logger.isDebugEnabled()) {
+                        logger.debug("serviceOnConnections({}) size[{}], CONNECTION_THRESHOLD[{}].",
                             poolKey, serviceOnConnections.size(), connectionThreshold);
                     }
                 }
@@ -121,8 +121,8 @@ public class ScheduledDisconnectStrategy implements ConnectionMonitorStrategy {
                             offConn.close();
                         }
                     } else {
-                        if (logger.isInfoEnabled()) {
-                            logger.info("Address={} won't close at this schedule turn",
+                        if (logger.isDebugEnabled()) {
+                            logger.debug("Address={} won't close at this schedule turn",
                                 RemotingUtil.parseRemoteAddress(offConn.getChannel()));
                         }
                     }
