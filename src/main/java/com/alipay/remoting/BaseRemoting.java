@@ -328,13 +328,6 @@ public abstract class BaseRemoting {
                                                        final InvokeContext invokeContext,
                                                        final InvokeCallback invokeCallback);
 
-    @Deprecated
-    protected CommandFactory getCommandFactory() {
-        LOGGER
-            .warn("The method getCommandFactory() is deprecated. Please use getCommandFactory(ProtocolCode/Connection) instead.");
-        return commandFactory;
-    }
-
     protected CommandFactory getCommandFactory(Connection conn) {
         ProtocolCode protocolCode = conn.getChannel().attr(Connection.PROTOCOL).get();
         return getCommandFactory(protocolCode);
@@ -342,11 +335,11 @@ public abstract class BaseRemoting {
 
     protected CommandFactory getCommandFactory(ProtocolCode protocolCode) {
         if (protocolCode == null) {
-            return getCommandFactory();
+            return commandFactory;
         }
         Protocol protocol = ProtocolManager.getProtocol(protocolCode);
         if (protocol == null) {
-            return getCommandFactory();
+            return commandFactory;
         }
         return protocol.getCommandFactory();
     }
